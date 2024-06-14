@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Instalar pacotes R necessários
-RUN R -e "install.packages('e1071', repos='https://cloud.r-project.org/')"
+RUN R -e "install.packages('e1071','caret','ggplot2'), repos='https://cloud.r-project.org/')"
 
 # Criar o diretório mydata e copiar o dataset
 RUN mkdir -p /home/rstudio/data
@@ -22,6 +22,7 @@ COPY /data/wine.csv /home/rstudio/data/wine.csv
 
 # Copiar o script R para o contêiner
 COPY /scripts/svm_wine.R /home/rstudio/svm_wine.R
+COPY /scripts/svm_iris.R /home/rstudio/svm_iris.R
 
 # Definir as permissões apropriadas
 RUN chown -R rstudio:rstudio /home/rstudio

@@ -1,48 +1,46 @@
-
 # Support Vector Machine
 
-Este repositório apresenta um exemplo de implementação de SVM em R com diferentes kernels (linear, radial e polinomial) para classificar um conjunto de dados de vinhos.
+> O Support Vector Machine (SVM) é um algoritmo de aprendizado de máquina usado para classificação e regressão. Ele encontra um hiperplano que separa dados pertencentes a duas classes diferentes. Basicamente, o SVM identifica os pontos extremos entre as classes e usa esses pontos para definir as margens de separação. Além disso, o SVM não se limita a dados linearmente separáveis; ele pode ser aplicado a dados mais complexos também.
+
+Este repositório apresenta a aplicação desse algoritmo em diferentes datasets utilizando a linguagem R com RStudio. Atualmente, ele inclui scripts para os datasets Iris e Wine.
 
 ![image](screenshot.png)
 
-## Observações sobre o dataset wine.csv
+## Requisitos
 
-O arquivo `wine.csv` contém um conjunto de dados de vinhos com informações como cor, teor alcoólico e tipo de vinho.
+- R e RStudio instalados (para execução local)
+- Docker instalado (para execução via Docker)
 
-## Sobre o código
-
-O código utiliza o pacote `e1071` para carregar o conjunto de dados `wine.csv`. Ele converte a variável `Type` em um fator e seleciona as variáveis `Color`, `Alcohol` e `Type` para modelagem.
-
-Os seguintes passos são realizados:
-
-1. Treinamento de três modelos SVM com diferentes kernels: linear, radial e polinomial. Os resultados são plotados para cada kernel.
-
-2. Ajuste dos parâmetros do modelo SVM usando a função `tune.svm` e plotagem dos resultados do ajuste de parâmetros.
-
-3. Avaliação do modelo com melhor ajuste, incluindo cálculos de precisão, recall e F1-score.
-
-## Como executar o código
+## Como executar os scripts
 
 Você pode executar o código de duas maneiras: localmente ou utilizando Docker.
 
 ### Execução local
 
 1. Clone o repositório e navegue até a pasta do projeto.
+    ```sh
+    git clone https://github.com/esscova/svm-R.git
+    cd svm
+    ```
 
 2. Execute o script R localizado em `scripts/`.
 
 ### Utilizando Docker
 
 1. Clone o repositório e navegue até a pasta do projeto.
+    ```sh
+    git clone https://github.com/esscova/svm-R.git
+    cd svm
+    ```
 
 2. Para construir a imagem Docker, execute:
     ```sh
-    docker build -t svm-wine .
+    docker build -t svm-R .
     ```
 
 3. Para iniciar o container Docker, execute:
     ```sh
-    docker run -p 8787:8787 svm-wine
+    docker run -p 8787:8787 svm-R
     ```
 
 4. Acesse o RStudio Server em `http://localhost:8787`.
@@ -59,8 +57,11 @@ Você pode executar o código de duas maneiras: localmente ou utilizando Docker.
 - A imagem Docker é baseada em `rocker/rstudio:latest` e inclui os pacotes R necessários.
 - O arquivo `wine.csv` será copiado para o container Docker e estará disponível para o script R durante a execução.
 
-## Relatório de análise
-Para uma análise detalhada do processo de implementação da SVM e dos resultados, consulte o <a href='/reports/wine_reports.md'>relatório completo</a>.
+## Relatórios das análises
+Para uma análise detalhada do processo de implementação da SVM e dos resultados, consulte:
+
+- <a href='/reports/iris_reports.md'>Classificação das espécies de flores do dataset Iris</a>
+- <a href='/reports/wine_reports.md'>Classificação dos tipos de vinhos do dataset Wine</a>
 
 ## Connect with me
 
@@ -69,4 +70,3 @@ Para uma análise detalhada do processo de implementação da SVM e dos resultad
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://www.facebook.com/wellmoreiras)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/moreira.883/)
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/wellington_moreira_santos)
-
