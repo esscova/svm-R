@@ -35,12 +35,12 @@ Você pode executar o código de duas maneiras: localmente ou utilizando Docker.
 
 2. Para construir a imagem Docker, execute:
     ```sh
-    docker build -t svm-R .
+    docker build -t svm-r .
     ```
 
 3. Para iniciar o container Docker, execute:
     ```sh
-    docker run -p 8787:8787 svm-R
+    docker run -p 8787:8787 svm-r
     ```
 
 4. Acesse o RStudio Server em `http://localhost:8787`.
